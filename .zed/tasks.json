@@ -1,0 +1,48 @@
+[
+  {
+    "label": "CMake Configure (Debug)",
+    "command": "cmake",
+    "args": ["-B", "build/debug", "-DCMAKE_BUILD_TYPE=Debug"],
+    "tags": ["cmake"]
+  },
+  {
+    "label": "CMake Configure (Release)",
+    "command": "cmake",
+    "args": ["-B", "build/release", "-DCMAKE_BUILD_TYPE=Release"],
+    "tags": ["cmake"]
+  },
+  {
+    "label": "Build (Debug)",
+    "command": "cmake",
+    "args": ["--build", "build/debug", "--parallel"],
+    "tags": ["build"]
+  },
+  {
+    "label": "Build (Release)",
+    "command": "cmake",
+    "args": ["--build", "build/release", "--parallel"],
+    "tags": ["build"]
+  },
+  {
+    "label": "Run (Debug)",
+    "command": "./build/debug/raylib_gaussian_splat_demo",
+    "tags": ["run"]
+  },
+  {
+    "label": "Run (Release)",
+    "command": "./build/release/raylib_gaussian_splat_demo",
+    "tags": ["run"]
+  },
+  {
+    "label": "Build & Run (Debug)",
+    "command": "cmake --build build/debug --parallel && ./build/debug/raylib_gaussian_splat_demo",
+    "use_new_terminal": false,
+    "tags": ["build", "run"]
+  },
+  {
+    "label": "Clean",
+    "command": "rm",
+    "args": ["-rf", "build"],
+    "tags": ["clean"]
+  }
+]
